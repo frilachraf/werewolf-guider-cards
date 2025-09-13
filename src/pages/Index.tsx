@@ -1,14 +1,15 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { GameHost } from '@/components/GameHost';
+import { GameSession } from '@/types/game';
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [gameSession, setGameSession] = useState<GameSession | null>(null);
+
+  const handleStartGame = (session: GameSession) => {
+    setGameSession(session);
+  };
+
+  return <GameHost onStartGame={handleStartGame} />;
 };
 
 export default Index;

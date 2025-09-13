@@ -57,6 +57,30 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        werewolf: {
+          DEFAULT: "hsl(var(--werewolf))",
+          foreground: "hsl(var(--werewolf-foreground))",
+        },
+        witch: {
+          DEFAULT: "hsl(var(--witch))",
+          foreground: "hsl(var(--witch-foreground))",
+        },
+        doctor: {
+          DEFAULT: "hsl(var(--doctor))",
+          foreground: "hsl(var(--doctor-foreground))",
+        },
+        sniper: {
+          DEFAULT: "hsl(var(--sniper))",
+          foreground: "hsl(var(--sniper-foreground))",
+        },
+        child: {
+          DEFAULT: "hsl(var(--child))",
+          foreground: "hsl(var(--child-foreground))",
+        },
+        villager: {
+          DEFAULT: "hsl(var(--villager))",
+          foreground: "hsl(var(--villager-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
