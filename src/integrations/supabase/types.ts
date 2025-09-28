@@ -14,7 +14,86 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cards: {
+        Row: {
+          avatar: string | null
+          created_at: string
+          description: string | null
+          id: number
+          title: string | null
+        }
+        Insert: {
+          avatar?: string | null
+          created_at?: string
+          description?: string | null
+          id?: number
+          title?: string | null
+        }
+        Update: {
+          avatar?: string | null
+          created_at?: string
+          description?: string | null
+          id?: number
+          title?: string | null
+        }
+        Relationships: []
+      }
+      players: {
+        Row: {
+          card_id: number | null
+          created_at: string
+          id: number
+          session_id: number | null
+          username: string | null
+        }
+        Insert: {
+          card_id?: number | null
+          created_at?: string
+          id?: number
+          session_id?: number | null
+          username?: string | null
+        }
+        Update: {
+          card_id?: number | null
+          created_at?: string
+          id?: number
+          session_id?: number | null
+          username?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "players_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sessions: {
+        Row: {
+          created_at: string
+          id: number
+          qr: string | null
+          size: number | null
+          status: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          qr?: string | null
+          size?: number | null
+          status?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          qr?: string | null
+          size?: number | null
+          status?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
